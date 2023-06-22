@@ -17,15 +17,19 @@ dependencies {
     implementation "io.rest-assured:rest-assured:$restAssuredVersion"
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
     implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
-    testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     implementation group: 'org.aeonbits.owner', name: 'owner', version: '1.0.10'
+    implementation group: 'io.qameta.allure', name: 'allure-java-commons', version: '2.22.2'
+    implementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.22.2'
 
+
+
+    testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     testImplementation("org.testng:testng:$testNgVersion")
 
 }
-test{
+test {
     useTestNG()
 
     systemProperties System.getProperties()
@@ -37,3 +41,11 @@ test{
     }
     test.outputs.upToDateWhen { false }
 }
+allure {
+    version = '2.8.1'
+    autoconfigure = true
+    aspectjweaver = 'true'
+    configuration = 'testImplementation'
+    allureJavaVersion = '2.22.2'
+}
+
