@@ -1,7 +1,7 @@
 node {
     stage("checkout repo") {
         git branch: 'master',
-        credentialsId: 'b481a596-0396-474d-bbe6-115f020d85c1',
+        credentialsId: 'd06c0797-4465-4ed4-988a-557e88eccd39',
         url: 'https://github.com/SvitlanaSomina/api-training-code.git'
     }
 
