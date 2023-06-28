@@ -10,6 +10,6 @@ node {
     }
 
     stage("run api tests") {
-       sh "./gradlew api-test:test"
+       sh "./gradlew api-test:test -Dlogging=${LOGGING}"
     }
 }
